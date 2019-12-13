@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="30 seconds">
+    <contextName>logback</contextName>
+    <property name="std" value="%d{HH:mm:ss.SSS}[%thread][%-5level]%msg %X{user} %logger{10}.%M:%L%n" />
+    <property name="mdc" value="%d{HH:mm:ss.SSS}[%thread][%-5level]%msg  ProcessDefinitionId=%X{mdcProcessDefinitionID} executionId=%X{mdcExecutionId} mdcProcessInstanceId=%X{mdcProcessInstanceID} mdcBusinessKey=%X{mdcBusinessKey} %logger{10}.%M:%L%n"/>
+
+    <!--ConsoleAppender 用于在屏幕上输出日志-->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${mdc}}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+
+    <logger name="root">
+        <level value="INFO"/>
+    </logger>
+    <logger name="com.imooc">
+        <level value="DEBUG"/>
+    </logger>
+    <root>
+        <appender-ref ref="stdout"/>
+    </root>
+</configuration>
