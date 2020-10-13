@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>config</artifactId>
     <properties>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <h2.version>1.4.196</h2.version>
         <logback.version>1.2.0</logback.version>
     </properties>
